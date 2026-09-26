@@ -1,0 +1,19 @@
+{
+  "schema_version": "main-experiment-labels-v1",
+  "method_name": "Direct LLM",
+  "match_level": "icd3",
+  "objective": {
+    "diagnostic_error_cost": 1000,
+    "critical_extra_cost": 100000
+  },
+  "safety": {
+    "critical_risk_threshold": 0.1
+  },
+  "cases": {
+    "replace_with_case_id": {
+      "primary_icd10_code": "K57.302",
+      "critical": false,
+      "physician_diagnostic_cost": 0
+    }
+  }
+}

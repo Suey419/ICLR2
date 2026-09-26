@@ -1,0 +1,13 @@
+{
+  "run_root": "runs",
+  "log_level": "INFO",
+  "max_steps": 20,
+  "search_depth": 2,
+  "max_actions": 5,
+  "branches_per_action": 3,
+  "belief_threshold": 0.85,
+  "critical_loss_threshold": 0.05,
+  "diagnostic_error_cost": 10000.0,
+  "critical_extra_loss": {},
+  "test_costs": {}
+}

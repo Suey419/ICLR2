@@ -1,0 +1,1087 @@
+{
+  "schema_version": "main-experiment-labels-v1",
+  "method_name": "Direct LLM",
+  "match_level": "icd3",
+  "objective": {
+    "diagnostic_error_cost": 1000,
+    "critical_extra_cost": 100000
+  },
+  "safety": {
+    "critical_risk_threshold": 0.2
+  },
+  "planning": {
+    "max_steps": 10,
+    "search_depth": 1,
+    "differential_count": 5,
+    "retrieval_query_count": 3,
+    "coarse_retrieval_top_k": 12,
+    "candidate_action_count": 3,
+    "branches_per_action": 3,
+    "belief_threshold": 0.8,
+    "critical_loss_threshold": 0.2,
+    "diagnostic_error_cost": 2000.0,
+    "critical_extra_cost": 100000.0
+  },
+  "critical_rule": {
+    "prefixes": [
+      "I21",
+      "I26",
+      "I60",
+      "I61",
+      "I63",
+      "O00",
+      "N83"
+    ],
+    "exact_codes": [],
+    "excluded": "Malignancy alone is not classified as critical"
+  },
+  "normalization": {
+    "mapping": {
+      "K31.8806": "K26.100",
+      "J82XX01": "J82.X01",
+      "I60": "I60.900",
+      "S06.6": "S06.600",
+      "I26.9": "I26.900",
+      "E06.1": "E06.100",
+      "H46XX05": "H46.X00",
+      "J47XX03": "J47.X03",
+      "J67": "J67.900",
+      "J45.101": "J45.005",
+      "S06.601": "S06.600",
+      "I61.401": "I61.400",
+      "I26.910": "I26.900",
+      "I21.902": "I21.900",
+      "K76.812": "K76.816",
+      "K82.002": "K83.109",
+      "C25.901": "C25.900",
+      "C25.001": "C25.000",
+      "C25.101": "C25.100",
+      "K72.004": "K72.100",
+      "G36.001": "G36.000",
+      "C34.304": "C34.300",
+      "C34.905": "C34.900",
+      "C34.907": "C34.901",
+      "C34.103": "C34.100",
+      "C34.303": "C34.300",
+      "C34.904": "C34.900",
+      "I28.807": "I28.800"
+    },
+    "compound_rank1_handling": "Keep the first code before the semicolon"
+  },
+  "cases": {
+    "319ce9048f9a5c7801bc3e819d2fd927": {
+      "primary_icd10_code": "K57.302",
+      "primary_diagnosis_name": "Colonic diverticulitis",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "c0f5be5357e5687bfd2c45ad49f54f53": {
+      "primary_icd10_code": "K35.902",
+      "primary_diagnosis_name": "Acute suppurative appendicitis",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "d783b38640bcb16fd9dd718c6b17a4f1": {
+      "primary_icd10_code": "K57.302",
+      "primary_diagnosis_name": "Colonic diverticulitis",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "eff9d4d3ab2e9062aa8885abbdb1581e": {
+      "primary_icd10_code": "K57.302",
+      "primary_diagnosis_name": "Colonic diverticulitis",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "0c6b1befb40429a36582fa5ed1156cf4": {
+      "primary_icd10_code": "K85.901",
+      "primary_diagnosis_name": "Acute pancreatitis",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "57c63f332c59255cdaf0f7ce47bf6dab": {
+      "primary_icd10_code": "K85.901",
+      "primary_diagnosis_name": "Acute pancreatitis",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "873339f2fab4db917460311900b782e5": {
+      "primary_icd10_code": "K85.901",
+      "primary_diagnosis_name": "Acute pancreatitis",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "25f7bd97b834e649e8c6ab82f98013a8": {
+      "primary_icd10_code": "K85.901",
+      "primary_diagnosis_name": "Acute pancreatitis",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "85d1ae872e1a90fb62a55ecc97a3a498": {
+      "primary_icd10_code": "K35.901",
+      "primary_diagnosis_name": "Acute appendicitis",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "8f273b5271b5f307b0a8d5b3ad2d7c33": {
+      "primary_icd10_code": "K35.901",
+      "primary_diagnosis_name": "Acute appendicitis",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "09f18ad83695b840a12e9832e3240c6b": {
+      "primary_icd10_code": "K57.104",
+      "primary_diagnosis_name": "Duodenal diverticulitis",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "2ad6a5875952d59b2f8b48ba7b033a6a": {
+      "primary_icd10_code": "K25.901",
+      "primary_diagnosis_name": "Gastric ulcer",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "1e6a16b3a3af2ee5c32e6b5b9e49ecad": {
+      "primary_icd10_code": "K80.002",
+      "primary_diagnosis_name": "Cholelithiasis with acute cholecystitis",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "946def24ad5483d8680548545a0864d6": {
+      "primary_icd10_code": "K85.901",
+      "primary_diagnosis_name": "Acute pancreatitis",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "2b638c96e3eece5b51f686cc694bb087": {
+      "primary_icd10_code": "K57.302",
+      "primary_diagnosis_name": "Colonic diverticulitis",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "e78cfc7429ed3951a428f8a3026c792a": {
+      "primary_icd10_code": "K35.901",
+      "primary_diagnosis_name": "Acute appendicitis",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "88a5916ea3d60ea4d0c7a2d603a48ac1": {
+      "primary_icd10_code": "K26.100",
+      "primary_diagnosis_name": "Duodenal perforation",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "04bcdaaddb9e3e66105027b2c89b946c": {
+      "primary_icd10_code": "K57.304",
+      "primary_diagnosis_name": "Cecal diverticulitis",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "30926c64ead6e501aa7a4ce0371168ec": {
+      "primary_icd10_code": "K35.901",
+      "primary_diagnosis_name": "Acute appendicitis",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "f4486986587164a4bd1dcf6898a5cfb8": {
+      "primary_icd10_code": "K57.301",
+      "primary_diagnosis_name": "Colonic diverticulum",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "6f51babab726dc034cd34dc904d47c8d": {
+      "primary_icd10_code": "K81.004",
+      "primary_diagnosis_name": "Acute cholecystitis",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "9cb4a4f68938d9a7bb116b73445cede1": {
+      "primary_icd10_code": "K85.901",
+      "primary_diagnosis_name": "Acute pancreatitis",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "48a8ab984727a482a60114606773beee": {
+      "primary_icd10_code": "K80.002",
+      "primary_diagnosis_name": "Cholelithiasis with acute cholecystitis",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "48d9023d5196b648be44c2fe4bce1d6e": {
+      "primary_icd10_code": "K81.004",
+      "primary_diagnosis_name": "Acute cholecystitis",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "911907522d13d1fbe1744e796b66bf78": {
+      "primary_icd10_code": "K35.901",
+      "primary_diagnosis_name": "Acute appendicitis",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "e9170a1b5c546afbc11ab2bcfcf92d41": {
+      "primary_icd10_code": "K35.902",
+      "primary_diagnosis_name": "Acute suppurative appendicitis",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "3f50ea42cff564178db5d07e8508fcbd": {
+      "primary_icd10_code": "N13.901",
+      "primary_diagnosis_name": "Urinary tract obstruction",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "2912dafd479e30c11f4c8fc39f4213cd": {
+      "primary_icd10_code": "K21.903",
+      "primary_diagnosis_name": "Gastroesophageal reflux",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "a7e42a263d204a41b6747e31545b84ba": {
+      "primary_icd10_code": "J45.005",
+      "primary_diagnosis_name": "Cough-variant asthma",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "5bd53f7a001befc8d9472880f3f255c3": {
+      "primary_icd10_code": "J45.005",
+      "primary_diagnosis_name": "Cough-variant asthma",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "6b6ad40e3ef659791ce62566d09b6558": {
+      "primary_icd10_code": "J45.005",
+      "primary_diagnosis_name": "Cough-variant asthma",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "4b288a6f2d15b09b5059f736b3ba2806": {
+      "primary_icd10_code": "K21.903",
+      "primary_diagnosis_name": "Gastroesophageal reflux",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "b7bc17c154b6c411916b6ce638faa5d5": {
+      "primary_icd10_code": "J45.005",
+      "primary_diagnosis_name": "Cough-variant asthma",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "fcb05ec46f71431325ab341c08348f71": {
+      "primary_icd10_code": "J45.005",
+      "primary_diagnosis_name": "Cough-variant asthma",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "6110b161ae7b733e51c97bb37b94c44c": {
+      "primary_icd10_code": "J45.005",
+      "primary_diagnosis_name": "Cough-variant asthma",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "f9df93bf8f49146f5327cf74391e3b20": {
+      "primary_icd10_code": "J45.005",
+      "primary_diagnosis_name": "Cough-variant asthma",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "9d4137da3bbae4a02c46dc37d5d81fcd": {
+      "primary_icd10_code": "J82.X01",
+      "primary_diagnosis_name": "Eosinophilic-pneumonia-associated bronchitis",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "44ddc0774c2349e568504f3a9dc8df14": {
+      "primary_icd10_code": "K21.903",
+      "primary_diagnosis_name": "Gastroesophageal reflux with cough",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "29480d6db6eb89fb3a05fa8e7253adab": {
+      "primary_icd10_code": "J45.005",
+      "primary_diagnosis_name": "Cough-variant asthma",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "d578a76bebf10810c671b6934d7cfa2e": {
+      "primary_icd10_code": "J45.005",
+      "primary_diagnosis_name": "Cough-variant asthma",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "0c2ea99f6924fe5dbf76842891fffa1a": {
+      "primary_icd10_code": "S06.600",
+      "primary_diagnosis_name": "Traumatic subarachnoid hemorrhage",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "636efb622a38431d79f33a1e11f49270": {
+      "primary_icd10_code": "I63.903",
+      "primary_diagnosis_name": "Lacunar cerebral infarction",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "a24a1dc5dcd81743e108b93625e4551f": {
+      "primary_icd10_code": "I63.903",
+      "primary_diagnosis_name": "Lacunar cerebral infarction",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "8c371e362481bd7e9d4b5ecc910b498a": {
+      "primary_icd10_code": "I60.900",
+      "primary_diagnosis_name": "Subarachnoid hemorrhage",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "aa082bd1cf3bf9ad052482a58c668f0b": {
+      "primary_icd10_code": "I60.901",
+      "primary_diagnosis_name": "Subarachnoid hemorrhage",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "fc64c7f37354bd38e82b0df5e7e39977": {
+      "primary_icd10_code": "I60.901",
+      "primary_diagnosis_name": "Subarachnoid hemorrhage",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "875af950e37c325c040f5958b16a3eb9": {
+      "primary_icd10_code": "I63.902",
+      "primary_diagnosis_name": "Cerebral infarction",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "a6a1271a2bc8a4797d265ae56c8e3cba": {
+      "primary_icd10_code": "I63.302",
+      "primary_diagnosis_name": "Cerebral infarction due to cerebral artery occlusion(localization：left lateral ventricle、frontotemporoparietal lobe characterization： cerebral atherosclerotic thrombosis artery-artery)",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "58125cd74299f859f66a51aa1109400b": {
+      "primary_icd10_code": "I63.903",
+      "primary_diagnosis_name": "Lacunar cerebral infarction",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "65734d43239a42924f3508d11f0a941c": {
+      "primary_icd10_code": "S06.600",
+      "primary_diagnosis_name": "Traumatic subarachnoid hemorrhage",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "80a40d55de70fda3eec28aae650fb3f3": {
+      "primary_icd10_code": "I63.902",
+      "primary_diagnosis_name": "Cerebral infarction",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "e23efc10af1ac2054c2ae42eca28e1a4": {
+      "primary_icd10_code": "I63.902",
+      "primary_diagnosis_name": "Cerebral infarction",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "39a351f9ecda0f492d81ea51b0a7d318": {
+      "primary_icd10_code": "I61.902",
+      "primary_diagnosis_name": "Cerebral hemorrhage",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "76a67d9c7fe0774cbee2c5985bfa95cc": {
+      "primary_icd10_code": "I61.400",
+      "primary_diagnosis_name": "Cerebellar hemorrhage",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "28379c17a9b55a996867f8e791ad93af": {
+      "primary_icd10_code": "I63.904",
+      "primary_diagnosis_name": "Cerebellar infarction",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "a50a21ae27b7034c8db05dc27f85e4b1": {
+      "primary_icd10_code": "I63.903",
+      "primary_diagnosis_name": "Lacunar cerebral infarction",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "526c7ddcca20ab8986b1b869490fad07": {
+      "primary_icd10_code": "N83.501",
+      "primary_diagnosis_name": "Ovarian torsion",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "276d5d3594a75fd94259e048b6a0187a": {
+      "primary_icd10_code": "N73.001",
+      "primary_diagnosis_name": "Acute female pelvic inflammatory disease",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "56640c2843d7b6b3be134e314047dd98": {
+      "primary_icd10_code": "N73.001",
+      "primary_diagnosis_name": "Acute female pelvic inflammatory disease",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "f8820524b0dbd09276d44b104007248a": {
+      "primary_icd10_code": "O00.101",
+      "primary_diagnosis_name": "Tubal pregnancy with hemorrhage",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "a39cb09ed4819303e3c2a13e0546e741": {
+      "primary_icd10_code": "O00.801",
+      "primary_diagnosis_name": "Cornual pregnancy",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "38cf24afea36c53ad1c46e236a68eb02": {
+      "primary_icd10_code": "I26.900",
+      "primary_diagnosis_name": "Acute pulmonary embolism",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "4db8cc1de1963f58355c05c490923abb": {
+      "primary_icd10_code": "I26.900",
+      "primary_diagnosis_name": "Acute pulmonary embolism",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "7b2e63bdd1eb4b6ad0531a3112214677": {
+      "primary_icd10_code": "I26.900",
+      "primary_diagnosis_name": "Acute pulmonary embolism",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "c912e1222948e1bbd224d2c944d89914": {
+      "primary_icd10_code": "I26.900",
+      "primary_diagnosis_name": "Pulmonary embolism without mention of acute cor pulmonale",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "f1cef095a135e8651dac8e6e883149cb": {
+      "primary_icd10_code": "I21.900",
+      "primary_diagnosis_name": "Acute myocardial infarction",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "24de35bb2b8629b2e4d2130cee66f4e0": {
+      "primary_icd10_code": "I26.900",
+      "primary_diagnosis_name": "Acute pulmonary embolism",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "7f685a87ae082d0259a2cdf236ab7ef8": {
+      "primary_icd10_code": "I26.900",
+      "primary_diagnosis_name": "Acute pulmonary embolism",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "cef3f50d830b220c656e45cc9baf1508": {
+      "primary_icd10_code": "I26.900",
+      "primary_diagnosis_name": "Acute pulmonary embolism",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "8b0da8293ec598c860c52bb9c1040223": {
+      "primary_icd10_code": "I26.901",
+      "primary_diagnosis_name": "Pulmonary embolism",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "8d3161c031b493453883633334dded46": {
+      "primary_icd10_code": "I26.901",
+      "primary_diagnosis_name": "Pulmonary embolism",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "06975ac03fd9d41668d0b1b7c6d09947": {
+      "primary_icd10_code": "I26.900",
+      "primary_diagnosis_name": "Acute pulmonary embolism",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "3d2a2864d607b543a5680c6452b08825": {
+      "primary_icd10_code": "I26.901",
+      "primary_diagnosis_name": "Pulmonary embolism",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "936cb39b61316044d8cec58a603945c2": {
+      "primary_icd10_code": "I26.901",
+      "primary_diagnosis_name": "Pulmonary embolism",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "dd08986b9dfe7f61d56401135fdfda65": {
+      "primary_icd10_code": "I26.901",
+      "primary_diagnosis_name": "Pulmonary embolism",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "2a59ca3efc97483be659943aeb63a820": {
+      "primary_icd10_code": "I21.900",
+      "primary_diagnosis_name": "Acute myocardial infarction",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "40827c01c8c794990846513e528099ea": {
+      "primary_icd10_code": "I26.900",
+      "primary_diagnosis_name": "Acute pulmonary embolism",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "a5b7dc2bcb7c734f39bf8c9303bebbe0": {
+      "primary_icd10_code": "I26.901",
+      "primary_diagnosis_name": "Pulmonary embolism",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "a375055eda78f603291c2ab2fb06a868": {
+      "primary_icd10_code": "I26.901",
+      "primary_diagnosis_name": "Pulmonary embolism",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "b5f5a70a4f38d1f41ee49c1e072b098d": {
+      "primary_icd10_code": "I26.901",
+      "primary_diagnosis_name": "Pulmonary embolism",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "912e6266a6ac974ce4ba1f98164dc355": {
+      "primary_icd10_code": "E06.100",
+      "primary_diagnosis_name": "Subacute thyroiditis",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "4362299f3528efa82f72f6d3c26d2313": {
+      "primary_icd10_code": "E05.001",
+      "primary_diagnosis_name": "Diffuse goiter with hyperthyroidism[Gravesdisease]",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "8fcfc4192d6ef4ed3fc72f2d037282dc": {
+      "primary_icd10_code": "E05.001",
+      "primary_diagnosis_name": "Diffuse goiter with hyperthyroidism[Gravesdisease]",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "8f9824aec5ee993b2a93e3ed7672376b": {
+      "primary_icd10_code": "E06.100",
+      "primary_diagnosis_name": "Subacute thyroiditis",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "a66fd878109af021056b067f8ebb3211": {
+      "primary_icd10_code": "E06.100",
+      "primary_diagnosis_name": "Subacute thyroiditis",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "8216d1e6d9ad9b8c42e668c4789be86d": {
+      "primary_icd10_code": "E05.001",
+      "primary_diagnosis_name": "Diffuse goiter with hyperthyroidism[Gravesdisease]",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "d2ddfe4a2f9ba65e8a6b93dc7c10b763": {
+      "primary_icd10_code": "E05.001",
+      "primary_diagnosis_name": "Diffuse goiter with hyperthyroidism[Gravesdisease]",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "18b8bedf8a57d610c7e258471793a584": {
+      "primary_icd10_code": "K76.816",
+      "primary_diagnosis_name": "Hepatocellular jaundice",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "21e6af81263e45414b948792e059454d": {
+      "primary_icd10_code": "C25.900",
+      "primary_diagnosis_name": "Malignant neoplasm of pancreas",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "5cee2728c5ac6c4add97622ba6fe3ce4": {
+      "primary_icd10_code": "C25.900",
+      "primary_diagnosis_name": "Malignant neoplasm of pancreas",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "70d1e23461cfe6f3c7b1085be086415a": {
+      "primary_icd10_code": "C25.000",
+      "primary_diagnosis_name": "Malignant neoplasm of pancreatic head",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "c617e881f2bb5e8b482a51f0278d4083": {
+      "primary_icd10_code": "C25.900",
+      "primary_diagnosis_name": "Malignant neoplasm of pancreas",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "038f79429ed5bb4afbd5755cbd62ee78": {
+      "primary_icd10_code": "K83.109",
+      "primary_diagnosis_name": "Obstructive jaundice",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "23396efc7e11d05f5933d10ed80875d6": {
+      "primary_icd10_code": "K83.109",
+      "primary_diagnosis_name": "Obstructive jaundice",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "2928d59e153eb1f7704afd683da26fcb": {
+      "primary_icd10_code": "C25.000",
+      "primary_diagnosis_name": "Malignant neoplasm of pancreatic head",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "d1e126d310541d797533f45c67ee430a": {
+      "primary_icd10_code": "K83.109",
+      "primary_diagnosis_name": "Obstructive jaundice",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "e980caaaf828fe5dda8be26280d43c4d": {
+      "primary_icd10_code": "C25.000",
+      "primary_diagnosis_name": "Malignant neoplasm of pancreatic head",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "d7da535e78ce2c5de37ee1dda0f15411": {
+      "primary_icd10_code": "K80.506",
+      "primary_diagnosis_name": "Common bile duct stone",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "0860bfe4ae30601127ce1b65b67d38d0": {
+      "primary_icd10_code": "B16.904",
+      "primary_diagnosis_name": "Hepatitis B（HBeAg Negative）",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "0f4af168c3c3dbd6ee4c0e24a587234d": {
+      "primary_icd10_code": "B18.107",
+      "primary_diagnosis_name": "Chronic hepatitis B(HBeAgPositive moderateG2S1)",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "4cad09e2f11e6f23a154d8d51fd168dd": {
+      "primary_icd10_code": "C25.000",
+      "primary_diagnosis_name": "Malignant neoplasm of pancreatic head",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "7eb1b7ae7285adfa1af8073b874386bf": {
+      "primary_icd10_code": "C25.100",
+      "primary_diagnosis_name": "Malignant neoplasm of pancreatic body",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "80f7b45a4be10ad0231aa0df992bbea7": {
+      "primary_icd10_code": "C25.900",
+      "primary_diagnosis_name": "Malignant neoplasm of pancreas",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "9b6f3e45e2f8eef9ca0a3f76b8dc1406": {
+      "primary_icd10_code": "C25.000",
+      "primary_diagnosis_name": "Malignant neoplasm of pancreatic head",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "b40bbe190e242ed5314cb29b3e2ed4bb": {
+      "primary_icd10_code": "C25.900",
+      "primary_diagnosis_name": "Malignant neoplasm of pancreas",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "b0169a24ae4746e10e5bafbbb2fa9c96": {
+      "primary_icd10_code": "K83.109",
+      "primary_diagnosis_name": "Obstructive jaundice",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "9fc95d34a5bd48700b8be78941965594": {
+      "primary_icd10_code": "K80.507",
+      "primary_diagnosis_name": "Intrahepatic bile duct stone",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "0abb4255f943177cb5174d318812725d": {
+      "primary_icd10_code": "K76.816",
+      "primary_diagnosis_name": "Hepatocellular jaundice",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "4f1e57d0a02a7e2e914e0edb40be47f5": {
+      "primary_icd10_code": "K71.601",
+      "primary_diagnosis_name": "Drug-induced hepatitis",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "78b0657dc7c90d120390b2e35ba6dd75": {
+      "primary_icd10_code": "C25.401",
+      "primary_diagnosis_name": "Malignant neoplasm of endocrine pancreas",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "01e5f0bbaa7fbd6ec320f13b9f530778": {
+      "primary_icd10_code": "K83.109",
+      "primary_diagnosis_name": "Obstructive jaundice",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "05f7ca6785f059b8e2b26f78c4806a8a": {
+      "primary_icd10_code": "K83.109",
+      "primary_diagnosis_name": "Obstructive jaundice",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "11e5109caa878a44a6aa5574d5a656c0": {
+      "primary_icd10_code": "K83.109",
+      "primary_diagnosis_name": "Obstructive jaundice",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "74d0c194842b609404a70ce45e30193c": {
+      "primary_icd10_code": "K83.109",
+      "primary_diagnosis_name": "Obstructive jaundice",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "ea9f31a9ac0c08c7f7ccf789d274aacd": {
+      "primary_icd10_code": "C25.000",
+      "primary_diagnosis_name": "Malignant neoplasm of pancreatic head",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "8b4180c4d11626165514f4a7b24111c6": {
+      "primary_icd10_code": "K72.001",
+      "primary_diagnosis_name": "Acute liver failure",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "8dda144458c09be58166cb45e2121b6e": {
+      "primary_icd10_code": "K72.001",
+      "primary_diagnosis_name": "Acute liver failure",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "b782783bf372462e4a41cf14cafe0aaa": {
+      "primary_icd10_code": "K80.506",
+      "primary_diagnosis_name": "Common bile duct stone",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "88a3c2eed59b40bf613880a5af17af3e": {
+      "primary_icd10_code": "B18.106",
+      "primary_diagnosis_name": "Chronic hepatitis B",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "14b340693d02bace97b0b7691487a8b0": {
+      "primary_icd10_code": "C25.900",
+      "primary_diagnosis_name": "Malignant neoplasm of pancreas",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "224d4ec4db280869b248785cdf732f21": {
+      "primary_icd10_code": "C25.900",
+      "primary_diagnosis_name": "Malignant neoplasm of pancreas",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "2abd977d0461e9a06d42ae2f2b138a39": {
+      "primary_icd10_code": "C25.900",
+      "primary_diagnosis_name": "Malignant neoplasm of pancreas",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "01ab281d02cbb51a91628c86c82c7368": {
+      "primary_icd10_code": "K83.109",
+      "primary_diagnosis_name": "Obstructive jaundice",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "2d4facaa6979cace6bca95fecfd3805d": {
+      "primary_icd10_code": "K83.109",
+      "primary_diagnosis_name": "Obstructive jaundice",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "56c19230a38c13df2dcd558f71ad809a": {
+      "primary_icd10_code": "C25.000",
+      "primary_diagnosis_name": "Malignant neoplasm of pancreatic head",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "5afd5f4a4729186a8f0732bb78ea2814": {
+      "primary_icd10_code": "K83.103",
+      "primary_diagnosis_name": "Bile duct obstruction",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "cb581f561ab265786e34222dfcfd9523": {
+      "primary_icd10_code": "K83.109",
+      "primary_diagnosis_name": "Obstructive jaundice",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "f357c1a8bb8b0013ed84d5c2f5018406": {
+      "primary_icd10_code": "K83.109",
+      "primary_diagnosis_name": "Obstructive jaundice",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "f4b0e608c7baedf82532b610332e55b0": {
+      "primary_icd10_code": "K83.109",
+      "primary_diagnosis_name": "Obstructive jaundice",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "f81a2da05252debd029f6b297f84f69a": {
+      "primary_icd10_code": "C25.000",
+      "primary_diagnosis_name": "Malignant neoplasm of pancreatic head",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "92ab5d97b967565d3e752b8aa7aafd18": {
+      "primary_icd10_code": "K72.100",
+      "primary_diagnosis_name": "Acute-on-chronic liver failure",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "e04defcc7ad8406935462ff39cea6fbe": {
+      "primary_icd10_code": "K80.301",
+      "primary_diagnosis_name": "Common bile duct stone with acute suppurative cholangitis",
+      "critical": true,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "d86b521c84d2ef67a1f02409d9bae0cf": {
+      "primary_icd10_code": "H46.X00",
+      "primary_diagnosis_name": "Optic neuritis",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "fb7b98ba69dcd75c2c7600a35067f07d": {
+      "primary_icd10_code": "G36.000",
+      "primary_diagnosis_name": "Neuromyelitis optica (Devic disease)",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "0cb8b49bebcd6f7e4d8f5433bc561dd2": {
+      "primary_icd10_code": "H46.X00",
+      "primary_diagnosis_name": "Optic neuritis",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "bffec3df85623d446d38251b22a053a3": {
+      "primary_icd10_code": "H46.X00",
+      "primary_diagnosis_name": "Optic neuritis",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "66889b09a7a0fd8e28aae3260824cfe3": {
+      "primary_icd10_code": "H34.804",
+      "primary_diagnosis_name": "Retinal vein occlusion",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "18a87686c41f889aa214afd5a1d7d6fd": {
+      "primary_icd10_code": "H46.X00",
+      "primary_diagnosis_name": "Optic neuritis",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "f07c37e5e2539e965fb5cd59a0c39df3": {
+      "primary_icd10_code": "H46.X00",
+      "primary_diagnosis_name": "Optic neuritis",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "5ad039d42bc97fc5df27eb2683c470a9": {
+      "primary_icd10_code": "J47.X03",
+      "primary_diagnosis_name": "Bronchiectasis with infection",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "ccc6f87f18debc09141eb5ddc5486734": {
+      "primary_icd10_code": "A16.202",
+      "primary_diagnosis_name": "Pulmonary tuberculosis",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "040b57502bbc4f6be32a25f61d4f4282": {
+      "primary_icd10_code": "C34.300",
+      "primary_diagnosis_name": "Malignant neoplasm of right lower lung lobe",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "6387643e1f90d1dae241f490762732a1": {
+      "primary_icd10_code": "C34.900",
+      "primary_diagnosis_name": "Malignant neoplasm of right lung",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "2c4128f417f170ebbbb08a6244fd608a": {
+      "primary_icd10_code": "J47.X03",
+      "primary_diagnosis_name": "Bronchiectasis with infection",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "4755e1dd97593a96b945f73a4e9a2559": {
+      "primary_icd10_code": "B90.901",
+      "primary_diagnosis_name": "Old pulmonary tuberculosis",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "58e99973f230831f3a3d329c44ba32d3": {
+      "primary_icd10_code": "A16.202",
+      "primary_diagnosis_name": "Pulmonary tuberculosis",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "34ee42f0d4c2c4a34bd0c6514ff43d94": {
+      "primary_icd10_code": "J67.900",
+      "primary_diagnosis_name": "Organic-dust-induced hypersensitivity pneumonitis",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "e1aa5a1893cd1bad7c5fed6761eedf11": {
+      "primary_icd10_code": "J67.900",
+      "primary_diagnosis_name": "Bilateral hypersensitivity pneumonitis[Extrinsic allergic alveolitis]？",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "4c134297639e1afe8fb63bf7dda08265": {
+      "primary_icd10_code": "C34.901",
+      "primary_diagnosis_name": "Malignant neoplasm of bronchus",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "57c0646e5100e04abce4b1d10bae469c": {
+      "primary_icd10_code": "C34.901",
+      "primary_diagnosis_name": "Malignant neoplasm of lung",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "5a469f1b98b86740a1f6dd8c29724433": {
+      "primary_icd10_code": "C34.100",
+      "primary_diagnosis_name": "Malignant neoplasm of left upper lung lobe",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "71b9c4936d4a166769c28901d2288f77": {
+      "primary_icd10_code": "C34.901",
+      "primary_diagnosis_name": "Malignant neoplasm of bronchus",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "93d9430f504d5ee550d684a1446fd47c": {
+      "primary_icd10_code": "C34.300",
+      "primary_diagnosis_name": "Malignant neoplasm of left lower lung lobe",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "9c6283ad81052f1342ba63048890deba": {
+      "primary_icd10_code": "C34.300",
+      "primary_diagnosis_name": "Malignant neoplasm of left lower lung lobe",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "aa5bd0ef92f31be838aaa7a656d3eb2b": {
+      "primary_icd10_code": "C34.300",
+      "primary_diagnosis_name": "Malignant neoplasm of right lower lung lobe",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "b6ade7913cf2157c6b59b584b98f917b": {
+      "primary_icd10_code": "C34.900",
+      "primary_diagnosis_name": "Malignant neoplasm of left lung",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "d982ba0a5593feb4d70f3344b3bd5530": {
+      "primary_icd10_code": "J47.X03",
+      "primary_diagnosis_name": "Bronchiectasis with infection",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "458170bfec0e0b78839d5cd0a0a48b56": {
+      "primary_icd10_code": "A16.202",
+      "primary_diagnosis_name": "Pulmonary tuberculosis",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "8870e520dbc6464de525afd989eeb4de": {
+      "primary_icd10_code": "A16.202",
+      "primary_diagnosis_name": "Pulmonary tuberculosis",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "ff08198315e63f8066e4b417709f5ace": {
+      "primary_icd10_code": "I28.800",
+      "primary_diagnosis_name": "Connective-tissue-disease-associated pulmonary vasculitis",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "2e02c9cc5efa0c6354d35a1f4700cc72": {
+      "primary_icd10_code": "C34.100",
+      "primary_diagnosis_name": "Malignant neoplasm of left upper lung lobe",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "739c85f3c313cda04b4cbc50fe763f87": {
+      "primary_icd10_code": "C34.901",
+      "primary_diagnosis_name": "Malignant neoplasm of bronchus",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "9534918d8a856dd9fd78644effad167b": {
+      "primary_icd10_code": "C34.901",
+      "primary_diagnosis_name": "Malignant neoplasm of lung",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "b50ee021e513bb004639ece098c33524": {
+      "primary_icd10_code": "C34.300",
+      "primary_diagnosis_name": "Malignant neoplasm of left lower lung lobe",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "e6c35831f3f4ca396f7a08e029bfc57c": {
+      "primary_icd10_code": "C34.901",
+      "primary_diagnosis_name": "Malignant neoplasm of lung",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "f50a85503773273f0a81ee1e9db26267": {
+      "primary_icd10_code": "C34.901",
+      "primary_diagnosis_name": "Malignant neoplasm of lung",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "430c02fd444aa136037865c4654d4f64": {
+      "primary_icd10_code": "J47.X03",
+      "primary_diagnosis_name": "Bronchiectasis with infection",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "770797abaa58b97e217a5d33c3b6d417": {
+      "primary_icd10_code": "J47.X03",
+      "primary_diagnosis_name": "Bronchiectasis with infection",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    },
+    "ca980e922702c03672b8a416c92ac1f4": {
+      "primary_icd10_code": "J47.X03",
+      "primary_diagnosis_name": "Bronchiectasis with infection",
+      "critical": false,
+      "label_source": "FHIR Condition: Discharge diagnosis, diagnosis-rank=1"
+    }
+  }
+}
